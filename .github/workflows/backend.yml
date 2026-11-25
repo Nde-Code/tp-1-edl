@@ -1,0 +1,34 @@
+name: Backend Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Prendre le code source
+        uses: actions/checkout@v4
+
+      - name: Installation Python 3.11
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Installer UV
+        run: pip install uv
+
+      - name: Installer les dépendances
+        run: |
+          cd backend
+          uv sync
+
+      - name: Run tests
+        run: |
+          cd backend
+          uv run pytest
