@@ -2,6 +2,8 @@
 
 Bienvenue dans le code de démarrage pour les ateliers d'Environnement de Développement Logiciel (EDL) !
 
+![CI Pipeline](https://github.com/Nde-Code/tp-1-edl/actions/workflows/ci-pipeline.yml/badge.svg)
+
 ## 📦 Contenu
 
 Ce starter contient une application **TaskFlow** complète avec :
